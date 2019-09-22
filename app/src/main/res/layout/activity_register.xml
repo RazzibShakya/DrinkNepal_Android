@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Register">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Register Drink Nepal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:padding="30dp"
+            android:alpha="1.20"/>
+
+        <EditText
+            android:id="@+id/regname"
+            android:textColorHint="@android:color/black"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:hint="Enter Your Name"
+            style="@style/customs"
+            />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/regaddress"
+            android:textColorHint="@android:color/black"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:hint="Enter Your Address"
+            style="@style/customs"
+            />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/regemail"
+            android:textColorHint="@android:color/black"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:hint="Enter Your Email Number"
+            style="@style/customs"
+            android:inputType="textEmailAddress"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Date of Birth"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:id="@+id/tvDate"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                style="@style/customs"/>
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/btndate"
+                android:background="@drawable/date"/>
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/regphone"
+            style="@style/customs"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Enter Your Phone Number"
+            android:textColorHint="@android:color/black" />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:textColorHint="@android:color/black"
+            android:id="@+id/regpass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="Enter your password..."
+            android:inputType="text"
+            android:ems="10"
+            style="@style/customs"
+            />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btnRegister"
+            style="@style/customs"
+            android:background="@drawable/rounded"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Login"
+            android:layout_marginTop="20dp"
+            android:textColor="#012E52"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/btngotologin"
+            android:fontFamily="sans-serif-medium"/>
+    </LinearLayout>
+
+</ScrollView>

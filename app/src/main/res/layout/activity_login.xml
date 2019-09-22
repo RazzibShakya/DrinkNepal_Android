@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Login"
+    android:orientation="vertical"
+    app:passwordToggleEnabled="true"
+    app:counterMaxLength="10"
+    app:counterEnabled="true"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_text_input_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@android:color/black"
+        android:layout_marginTop="2dp"
+        android:paddingTop="15dp">
+        <EditText
+            android:id="@+id/txtuser"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:hint="Enter your Phone No..."
+            style="@style/customs"
+            android:drawableRight="@drawable/username"/>
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_text_input_layout"
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:textColorHint="@android:color/black"
+        android:layout_marginTop="2dp">
+
+
+        <EditText
+            android:id="@+id/txtpass"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="Enter your password..."
+            android:inputType="textPassword"
+            android:ems="10"
+            style="@style/customs"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnLogin"
+        android:background="@drawable/rounded"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Here"
+        android:layout_marginTop="20dp"
+        android:textColor="#F75555"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/btnregister"
+        android:fontFamily="sans-serif-medium"/>
+
+
+
+</LinearLayout>
