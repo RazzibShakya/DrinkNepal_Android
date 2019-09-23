@@ -15,8 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Connection {
     private API API,APInoAuth;
-    public static String url="http://172.26.0.115:3000/DrinkNepal/"; //ipaddress
-    public static String drinkurl="http://172.26.0.115:3000/drink/";
+    public static String url="http://172.26.1.62:3000/DrinkNepal/"; //ipaddress
+    public static String drinkurl="http://172.26.1.62:3000/drink/";
 
 
     //this is for authentication

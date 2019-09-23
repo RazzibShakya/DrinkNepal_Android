@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.softwarica.drinknepal.Activities.FragmentHolder;
 import com.softwarica.drinknepal.Adapter.DrinkRecyclerAdapter;
+import com.softwarica.drinknepal.BusinessLogic.ProductLogic;
 import com.softwarica.drinknepal.Model.Drink;
 import com.softwarica.drinknepal.R;
 
@@ -39,9 +40,11 @@ public class Drinks extends Fragment {
         ((FragmentHolder) (getContext())).getSupportActionBar()
                 .hide();
         drinkrv=view.findViewById(R.id.recyclerDrink);
+        ProductLogic pl=new ProductLogic();
+        List<Drink>drinkList= (List<Drink>) pl.getAllDrink();
+        DrinkRecyclerAdapter treadapter=new DrinkRecyclerAdapter(drinkList,getContext());
         drinkrv.setLayoutManager(new LinearLayoutManager(getContext()));
-        drinkrv.setAdapter(new DrinkRecyclerAdapter(drinklist,getContext()));
-
+        drinkrv.setAdapter(treadapter);
         return view;
     }
 

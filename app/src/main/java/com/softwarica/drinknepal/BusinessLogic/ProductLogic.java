@@ -19,10 +19,12 @@ public class ProductLogic {
             Response<List<Drink>> drinklist=listdrink.execute();
         if(drinklist.isSuccessful()){
            drink= (Drink) drinklist.body();
+        }else{
+            drink=null;
         }
 
         }catch (Exception e){
-            
+            e.printStackTrace();
         }
         return drink;
     }
