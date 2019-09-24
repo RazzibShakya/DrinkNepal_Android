@@ -11,12 +11,13 @@ import retrofit2.http.POST;
 
 public interface API {
 
+    //for registering user
     @POST("createuser")
-    Call<Void>registerUser(@Body User user);
+    Call<Void>addNewUser(@Body User user);
 
     @FormUrlEncoded
     @POST("login")  //this is a post method for login
-    Call<LoginResponse> checkUser(@Field("username")String username, @Field("password")String password);
+    Call<LoginResponse> checkUser(@Field("phone")String phone, @Field("password")String password);
 
     @GET("drinks")  //this is a get method for getting all the treks
     Call<List<Drink>> getAllDrink();

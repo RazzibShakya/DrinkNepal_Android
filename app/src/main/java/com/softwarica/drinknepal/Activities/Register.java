@@ -132,6 +132,10 @@ Button btnregister,btnCalendar;
         startActivity(intent1);
     }
 
+    public void StrictMode() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
 
     @Override
     public void onClick(View view) {
@@ -139,8 +143,7 @@ Button btnregister,btnCalendar;
             case R.id.btnRegister:
                 if(RegisterValidation()==true){
                     UserLogic ul=new UserLogic();
-                    Connection conn=new Connection();
-                    conn.StrictMode();
+     StrictMode();
                     if(ul.RegisterUser(txtname.getText().toString(),txtemail.getText().toString(),txtphone
                     .getText().toString(),txtaddress.getText().toString(),txtdob.getText().toString(),txtpassword.getText()
                     .toString())){

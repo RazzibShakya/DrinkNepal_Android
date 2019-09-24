@@ -14,7 +14,7 @@ public class ProductLogic {
 
     public Drink getAllDrink(){
         Connection connection=new Connection();
-        Call<List<Drink>> listdrink= connection.createInstanceofRetrofitnoauth().getAllDrink();
+        Call<List<Drink>> listdrink= connection.createInstanceofRetrofitwithoutauth().getAllDrink();
         try {
             Response<List<Drink>> drinklist=listdrink.execute();
         if(drinklist.isSuccessful()){

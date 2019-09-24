@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.softwarica.drinknepal.BusinessLogic.UserLogic;
+import com.softwarica.drinknepal.Model.User;
 import com.softwarica.drinknepal.R;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +22,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button btnlogin;
     TextView btnregister;
     private SharedPreferences.Editor editor;
+    SharedPreferences preferences;
 
 
 
@@ -29,6 +32,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
         initiate();
+        preferences = getSharedPreferences("APP", MODE_PRIVATE);
+        editor=preferences.edit();
 
     }
 
@@ -64,17 +69,24 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    public void StrictMode() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
+
     @Override
     public void onClick(View v) {
        switch (v.getId()){
            case R.id.btnLogin:
+
            if(checkUser()==true){
                UserLogic ul=new UserLogic();
+               StrictMode();
                if(ul.LoginUser(txtusername.getText().toString(),pwpass.getText().toString())){
-                   Toast.makeText(Login.this,"Your have successfully signed in"+ ul.token,Toast.LENGTH_SHORT).show();
-                   editor.putString("token", ul.token);
+                   Toast.makeText(Login.this,"Your have successfully signed in"+ UserLogic.token,Toast.LENGTH_SHORT).show();
+                   editor.putString("token", UserLogic.token);
                    Gson gson = new Gson();
-                   String json = gson.toJson(ul.user);
+                   String json = gson.toJson(UserLogic.user);
                    editor.putString("userobj", json);
                    editor.commit();
                    Intent intent=new Intent(Login.this,FragmentHolder.class);

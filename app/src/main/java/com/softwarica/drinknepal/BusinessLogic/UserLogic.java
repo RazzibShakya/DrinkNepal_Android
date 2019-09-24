@@ -10,6 +10,7 @@ import java.io.IOException;
 import retrofit2.Call;
 import retrofit2.Response;
 
+
 public class UserLogic {
     public static String token;
     public static User user;
@@ -17,7 +18,7 @@ public class UserLogic {
     public boolean LoginUser(String username, String password){
         boolean isSuccess=false;
         Connection con=new Connection();
-        API api= con.createInstanceofRetrofitnoauth();
+        API api= con.createInstanceofRetrofitwithoutauth();
         Call<LoginResponse> usercall=api.checkUser(username,password);
         try{
             Response<LoginResponse> loginresponse=usercall.execute();
@@ -37,11 +38,10 @@ public class UserLogic {
     public boolean RegisterUser(String name,String email,String phone,String address,String dob,String password) {
         boolean register = false;
         Connection conn=new Connection();
-        API api= conn.createInstanceofRetrofitnoauth();
-        User user=new User(name,email,phone,address,dob,password);
-        Call<Void>addNewUser=api.registerUser(user);
+        User user=new User(name,phone,email,address,dob,password);
+        Call<Void>addUser= conn.createInstanceofRetrofitwithoutauth().addNewUser(user);
         try{
-            Response<Void>adduser=addNewUser.execute();
+            Response<Void>adduser=addUser.execute();
             if (adduser.isSuccessful()){
                 register=true;
             }
